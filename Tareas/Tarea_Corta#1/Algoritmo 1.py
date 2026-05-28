@@ -68,8 +68,6 @@ def medir_tiempo(funcion, n):
     print(f"Resultado = {resultado}")
     print(f"Tiempo = {tiempo:.8f} segundos")
 
-
-
 # =========================
 # Programa principal
 # =========================

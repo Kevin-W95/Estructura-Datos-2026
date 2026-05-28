@@ -31,6 +31,11 @@ def algoritmo2(n):
 
     return promedio + suma_pares + suma_impares # O(1) -> Constante
 
+# Primero, se eliminan las operaciones simples que están afuera (como crear las variables total, suma_pares, suma_impares, a, b, c, calcular el promedio y el return). 
+# Se descartan porque son de tiempo constante O(1).
+# Hay un solo ciclo for y solo se repite exactamente n veces de forma secuencial. 
+# Por dentro tiene varias operaciones rápidas (como sumas, multiplicaciones y un if-else), todas ellas son de tiempo constante O(1) y solo se ejecutan una vez por cada vuelta del ciclo.
+# El resultado teórico es O(n) función de crecimiento lineal.
 
 # =========================
 # Medición de tiempo
