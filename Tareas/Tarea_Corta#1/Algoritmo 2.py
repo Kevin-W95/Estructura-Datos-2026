@@ -6,31 +6,30 @@ import time
 # =========================
 def algoritmo2(n):
 
-    total = 0
-    suma_pares = 0
-    suma_impares = 0
+    total = 0 # O(1) -> Constante
+    suma_pares = 0 # O(1) -> Constante
+    suma_impares = 0 # O(1) -> Constante
 
     # Operaciones constantes
-    a = 10
-    b = 20
-    c = a + b
+    a = 10 # O(1) -> Constante
+    b = 20 # O(1) -> Constante
+    c = a + b # O(1) -> Constante
 
-    for i in range(n):
+    for i in range(n): # Único ciclo principal: Se repite N veces
 
-        total += i
+        total += i # O(1) -> Operación simple
 
-        if i % 2 == 0:
-            suma_pares += i
+        if i % 2 == 0: # O(1) -> Operación simple
+            suma_pares += i # O(1) 
         else:
-            suma_impares += i
+            suma_impares += i # O(1) 
+        x = i * 2 # O(1) -> Operación simple
+        y = x + 5 # O(1) -> Operación simple
+        z = y / 2 # O(1) -> Operación simple
+ 
+    promedio = total / n # O(1) -> Constante
 
-        x = i * 2
-        y = x + 5
-        z = y / 2
-
-    promedio = total / n
-
-    return promedio + suma_pares + suma_impares
+    return promedio + suma_pares + suma_impares # O(1) -> Constante
 
 
 # =========================
