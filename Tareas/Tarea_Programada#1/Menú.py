@@ -8,7 +8,7 @@ def menu_principal():
 
     while True:
         print("\n" + "="*40)
-        print("      POKÉDEX SYSTEM - PROFESOR OAK      ")
+        print("POKÉDEX SYSTEM - PROFESOR OAK")
         print("="*40)
         print("1. Cargar archivo CSV")
         print("2. Ordenar por Nombre")
