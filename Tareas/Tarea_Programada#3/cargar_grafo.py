@@ -3,7 +3,8 @@ import os
 
 def cargar_grafo(ruta_archivo):
     """
-    Valida la existencia del archivo y lo carga en un diccionario de Python.
+    Carga el grafo oficial de Street Fighter y lo convierte en una 
+    lista de adyacencia (diccionario de diccionarios) compatible.
     """
     if not os.path.exists(ruta_archivo):
         print(f"Error: El archivo '{ruta_archivo}' no existe.")
@@ -11,23 +12,24 @@ def cargar_grafo(ruta_archivo):
     
     try:
         with open(ruta_archivo, 'r', encoding='utf-8') as archivo:
-            grafo = json.load(archivo)
+            datos = json.load(archivo)
             
-            # Validación de estructura básica
-            if not isinstance(grafo, dict):
-                print("Error: El archivo JSON debe contener un diccionario principal.")
+            if "vertices" not in datos or "aristas" not in datos:
+                print("Error: El JSON no contiene las llaves 'vertices' o 'aristas'.")
                 return None
             
-            for pais, conexiones in grafo.items():
-                if not isinstance(conexiones, dict):
-                    print(f"Error: Las conexiones de '{pais}' deben ser un diccionario.")
-                    return None
-                for vecino, peso in conexiones.items():
-                    if not isinstance(peso, (int, float)):
-                        print(f"Error: El peso hacia '{vecino}' desde '{pais}' debe ser numérico.")
-                        return None
+            grafo_formateado = {vertice: {} for vertice in datos["vertices"]}
             
-            return grafo
+            for arista in datos["aristas"]:
+                origen = arista.get("origen")
+                destino = arista.get("destino")
+                peso = arista.get("peso")
+                
+                if origen in grafo_formateado:
+                    grafo_formateado[origen][destino] = peso
+            
+            return grafo_formateado
+            
     except json.JSONDecodeError:
         print("Error: El archivo no tiene un formato JSON válido.")
         return None
