@@ -1,0 +1,23 @@
+{
+  "Japón": {
+    "Tailandia": 10,
+    "EEUU": 15
+  },
+  "Tailandia": {
+    "Brasil": 12,
+    "Inglaterra": 15
+  },
+  "EEUU": {
+    "Brasil": 10,
+    "Japón": 15
+  },
+  "Brasil": {
+    "Inglaterra": 8,
+    "Japón": 20
+  },
+  "Inglaterra": {
+    "Japón": 5,
+    "EEUU": 9,
+    "Tailandia": 7
+  }
+}
